@@ -1,0 +1,46 @@
+<div
+  *ngIf="!loading; else loadingInfo"
+  class="wrapper-component"
+>
+
+  <a
+    routerLink="/primary"
+    class="back-button">
+    <img src="assets/images/back-arrow.svg" alt="back arrow" class="back-button__arrow">
+    <span class="back-button__text">Back</span>
+  </a>
+
+  <div class="planet">
+    <img
+      src="{{'assets/images/planets/' + planet.id + '.png'}}"
+      alt="{{planet.imgSrc.imgDesc}}"
+      class="planet__image"
+    >
+
+    <div class="planet-info info">
+      <div class="info-main">
+        <p class="info-main__position">{{'№' + planet.planetOrder}}</p>
+        <p class="info-main__name">{{planet.name}}</p>
+      </div>
+
+      <p class="info__description">{{planet.description}}</p>
+
+      <div class="info-secondary">
+        <p class="info-secondary__mass">Planet mass: <span>{{planet.basicDetails.mass}}</span></p>
+        <p class="info-secondary__volume">Planet volume: <span>{{planet.basicDetails.volume}}</span></p>
+      </div>
+    </div>
+
+    <a
+      href="{{planet.wikiLink}}"
+      target="_blank"
+      class="planet__wikiLink"
+    >
+      Wiki
+    </a>
+  </div>
+</div>
+
+<ng-template #loadingInfo>
+  <img class="loading bounce" src="assets/images/loading.png" alt="loading image">
+</ng-template>

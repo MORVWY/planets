@@ -1,0 +1,98 @@
+.wrapper-component {
+  padding: 15px 25px;
+
+  .logo {
+    font-size: 2rem;
+    font-weight: 900;
+    cursor: pointer;
+  }
+
+  .planets {
+    gap: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__nasa,
+    &__primary,
+    &__wiki {
+      padding: 10px;
+      width: 125px;
+      background-color: #fff;
+      color: #393E46;
+      font-size: 1.3rem;
+      font-weight: 700;
+      border-radius: 5px;
+      transition: all .25s ease-in-out;
+      text-align: center;
+
+      &:hover {
+        transform: scale(1.1);
+        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+      }
+    }
+
+    .active {
+      color: #fff;
+      background-color: #393E46;
+      box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+      transform: scale(1.1);
+    }
+  }
+}
+
+.display-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 1200px) {
+  .wrapper-component {
+    .planets {
+
+      &__nasa,
+      &__primary,
+      &__wiki {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .wrapper-component {
+    .planets {
+      gap: 15px;
+
+      &__nasa,
+      &__primary,
+      &__wiki {
+        font-size: 1.1rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper-component {
+    .planets {
+      flex-direction: column;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .wrapper-component {
+    .logo {
+      font-size: 1.5rem;
+    }
+    .planets {
+      &__nasa,
+      &__primary,
+      &__wiki {
+        font-size: 1rem;
+      }
+    }
+  }
+}

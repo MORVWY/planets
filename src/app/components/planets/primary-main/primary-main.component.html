@@ -1,0 +1,36 @@
+<div class="wrapper-component">
+
+  <div *ngIf="!loading; else loadingInfo">
+
+    <a
+      routerLink="/"
+      class="back-button">
+      <img src="assets/images/back-arrow.svg" alt="back arrow" class="back-button__arrow">
+      <span class="back-button__text">Back</span>
+    </a>
+
+    <div
+      class="planets"
+    >
+      <div
+        *ngFor="let planet of planets"
+        class="planets-list"
+      >
+        <img
+          src="{{'assets/images/planets/' + planet.id + '.png'}}"
+          alt="{{planet.name}}"
+          class="planets-list__image"
+        >
+        <a
+          [routerLink]="['/primary', planet.id]"
+          class="planets-list__item"
+        >{{planet.name}}
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #loadingInfo>
+    <img class="loading bounce" src="assets/images/loading.png" alt="loading image">
+  </ng-template>
+</div>
